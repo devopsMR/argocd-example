@@ -24,6 +24,7 @@ upload to docker hub
 
 
 #integrate argocd with github 
+#and deploy Kubernetes manifests or Helm
 #(when git is updated also container will be updated )
 #ArgoCD is a declarative, GitOps-based continuous delivery tool for Kubernetes. It integrates with Git repositories like GitHub to automatically synchronize and deploy Kubernetes manifests whenever changes are made in the Git repository. This ensures that your containerized applications stay updated and aligned with the desired state defined in Git
 
@@ -31,7 +32,7 @@ argocd app create flask-app \
   --repo https://github.com/devopsMR/argocd-example.git \
   --path . \
   --dest-server https://kubernetes.default.svc \
-  --dest-namespace default \
+  --dest-namespace [APP-NAME-SPACE] \
   --sync-policy automated
 
 minikube service flask-app-service
